@@ -116,18 +116,16 @@ de notas).
 
 ### React
 
-* [ ] ¿Qué es React?
-* [ ] Virtual DOM
-* [ ] ReactDOM rendering
-* [ ] [`¿Qué es un componente de React?`](https://es.reactjs.org/docs/components-and-props.html)
 * [ ] [`JSX`](https://es.reactjs.org/docs/introducing-jsx.html)
-* [ ] Props
-* [ ] Renderizado condicional (?)
-* [ ] State(ej: `this.state`, `useState`,`context`, `redux`, ...)
-* [ ] [`Manejo de eventos`](https://es.reactjs.org/docs/handling-events.html)
-* [ ] Refs
-* [ ] [`Component Lifecycle`](https://es.reactjs.org/docs/hooks-effect.html)
-* [ ] [`React Router`](https://reacttraining.com/react-router/web)
+* [ ] [Componentes `class` y componentes `function`](https://es.reactjs.org/docs/components-and-props.html#function-and-class-components)
+* [ ] `props`
+* [ ] [Eventos en React.](https://es.reactjs.org/docs/handling-events.html)
+* [ ] [Listas y keys.](https://es.reactjs.org/docs/lists-and-keys.html)
+* [ ] [Renderizado condicional.](https://es.reactjs.org/docs/conditional-rendering.html)
+* [ ] [Elevación de estados.](https://es.reactjs.org/docs/lifting-state-up.html)
+* [ ] [`hooks`](https://es.reactjs.org/docs/hooks-intro.html)
+* [ ] [`CSS` modules.](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet)
+* [ ] [React Router.](https://reacttraining.com/react-router/web)
 
 ### Angular
 
