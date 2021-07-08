@@ -1,4 +1,4 @@
-import { Note } from './note';
+import { Note } from 'src/app/note';
 
 export const NOTAS: Note[] = [
   { id: 1, title: 'Instalando Angular', description: 'Probando angular' },

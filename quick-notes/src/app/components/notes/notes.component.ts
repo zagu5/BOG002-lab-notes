@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from '../note';
-// import { NOTAS } from '../mock-notes';
+import { Note } from '../../note';
+import { NOTAS } from 'src/app/mock-notes';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+// import { NoteService } from 'src/app/services/note.service';
 
 @Component({
   selector: 'app-notes',
