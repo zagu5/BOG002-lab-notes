@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment} from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ToastrModule } from 'ngx-toastr';
 // import { AngularFirestore} from '@angular/fire/firestore';
 // import { AngularFireAuthModule} from '@angular/fire/auth';
 // import { FlashMessagesModule} from 'angular2-flash-messages';
@@ -39,6 +40,7 @@ import { CreateNotesComponent } from './components/create-notes/create-notes.com
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     // AngularFireAuthModule,

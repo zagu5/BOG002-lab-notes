@@ -1,11 +1,11 @@
 <div class="container">
   <div class="card text center">
     <div class="card body">
-      <!-- <h3 {{ message }} >
-        <div *ngIf="loading" role="status">
-          <span>Loading...</span>
+      <h3> Añadir Nota
+        <div *ngIf="loading" class="spinner-border text-info" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-      </h3> -->
+      </h3>
       <span *ngIf="submitted && createNoteForm.invalid" >Debes llenar todos los campos</span>
       <form [formGroup]="createNoteForm" (ngSubmit)="addNote()">
         <div>

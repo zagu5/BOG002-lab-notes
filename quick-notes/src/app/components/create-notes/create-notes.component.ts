@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { NoteService } from 'src/app/services/note.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { NoteService } from 'src/app/services/note.service';
 export class CreateNotesComponent implements OnInit {
   createNoteForm: FormGroup;
   submitted = false;
- // loading = false;
+  loading = false;
   id: string | null;
   // message = 'Añadir nota';
 
@@ -20,6 +21,7 @@ export class CreateNotesComponent implements OnInit {
     private noteService: NoteService,
     private router: Router,
     private aRoute: ActivatedRoute,
+    private toastr: ToastrService,
     ) {
       this.createNoteForm = this.formBuilder.group({
         title: ['', Validators.required ],
@@ -43,14 +45,15 @@ export class CreateNotesComponent implements OnInit {
       createDate: new Date(),
       updateDate: new Date()
     }
-     // this.loading = true;
+      this.loading = true;
       this.noteService.addNote(note).then(() =>{
+        this.toastr.success('Tu nota ha sido añadida!', 'Listo!');
         // console.log('Nota añadida');
-       // this.loading = false;
+        this.loading = false;
         this.router.navigate(['/notes'])
       }).catch(error => {
         console.log(error);
-       // this.loading = false;
+        this.loading = false;
       })
     // console.log(note);
   }
