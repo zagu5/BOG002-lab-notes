@@ -1,13 +1,18 @@
 <div class="container">
   <div class="card text center">
     <div class="card body">
-      <form class="form-create-note">
-        <h2>Crear notas</h2>
+      <!-- <h3 {{ message }} >
+        <div *ngIf="loading" role="status">
+          <span>Loading...</span>
+        </div>
+      </h3> -->
+      <span *ngIf="submitted && createNoteForm.invalid" >Debes llenar todos los campos</span>
+      <form [formGroup]="createNoteForm" (ngSubmit)="addNote()">
         <div>
-          <input class="input-title" type="text" placeholder="Titulo" id="title-note">
+          <input formControlName="title" required class="form-control" type="text" placeholder="Titulo" id="title-note">
         </div>
         <div>
-          <input class="input-description" type="text" placeholder="Descripcion" id="description-note">
+          <input formControlName="description" required class="form-control" type="text" placeholder="Descripcion" id="description-note">
         </div>
         <div>
           <!-- <button class="btn-note" type="submit"><i class="fas fa-angle-double-left"></i></button> -->

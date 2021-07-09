@@ -1,25 +1,33 @@
 <h2>Fast-Notes</h2>
-<ul class="notas">
-  <li *ngFor="let note of notas | async"
+<div class="container">
+  <span class="h3">Listado de Notas</span>
+  <button class="btn-add" routerLink="/create-notes">Agregar</button>
+  <h5 *ngIf="notes.length == 0">No hay notas para mostrar</h5>
+  <ul class="notas" *ngIf="notes.length > 0">
+    <!-- <li *ngFor="let note of notas | async"
     [class.selected]="note === selectedNote"
-    (click)="onSelect(note)">
-    <span class="badge">{{note.id}}</span> {{note.title}}
-  </li>
-</ul>
-<app-note-detail [note]="selectedNote"></app-note-detail>
+    (click)="onSelect(note)"> -->
+    <li *ngFor="let note of notes" >
+      <span class="badge">{{note.title}}</span> {{note.description}}
+      <i class="far fa-edit" [routerLink]="['editNote/id', note.id]"></i>
+      <i (click)="deleteNotes(note.id)" class="fas fa-trash-alt"></i>
+    </li>
+  </ul>
+  <!-- <app-note-detail [note]="selectedNote"></app-note-detail> -->
 
-<!-- el componente solo debe mostrar los detalles de la nota seleccionada si selectedNote existe
+  <!-- el componente solo debe mostrar los detalles de la nota seleccionada si selectedNote existe
   (ojo  cuando se inicia la appp selectedNote es undefined por diseño, no hay ninguna nota seleccionada) -->
-<div *ngIf="selectedNote">
   <!-- seccion que al hacer click en una nota de la lista y revelar los detalles  -->
-<h2>{{selectedNote.title | uppercase}} </h2>
-<div><span>id: </span>{{selectedNote.id}}</div>
-<div><span>title: </span>{{selectedNote.title}}</div>
-<div><span>description: </span>{{selectedNote.description}}</div>
-<div>
-  <label for="note-title">Titulo: </label>
-  <input type="text" id="note-title" [(ngModel)]= "selectedNote.title" placeholder="Titulo">
-</div>
+  <!-- <div >
+    <h2>{{note.title | uppercase}} </h2>
+    <div><span>id: </span>{{note.id}}</div>
+    <div><span>title: </span>{{note.title}}</div>
+    <div><span>description: </span>{{note.description}}</div>
+    <div>
+      <label for="note-title">Titulo: </label>
+      <input type="text" id="note-title" [(ngModel)]= "note.title" placeholder="Titulo">
+    </div>
+  </div> -->
 </div>
 <!-- <ul>
   <li class="text" *ngFor="let note of notas | async">

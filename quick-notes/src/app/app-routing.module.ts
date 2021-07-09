@@ -15,6 +15,7 @@ const routes: Routes = [
  { path: 'login', component: LoginComponent},
  { path: 'notes', component: NotesComponent},
  { path: 'create-notes', component: CreateNotesComponent},
+ { path: 'editNote/id', component: CreateNotesComponent},
  { path: '**', redirectTo: 'home', pathMatch:'full'},
 
 ];
