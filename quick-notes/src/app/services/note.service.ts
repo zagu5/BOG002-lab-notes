@@ -18,11 +18,17 @@ export class NoteService {
   getNote(): Observable<any>{
     return this.firestore.collection('NOTAS', ref => ref.orderBy('createDate','asc')).snapshotChanges();
   }
+
   deleteNote(id: string): Promise<any> {
     return this.firestore.collection('NOTAS').doc(id).delete();
   }
+
   getNoteId(id: string): Observable<any> {
     return this.firestore.collection('NOTAS').doc(id).snapshotChanges();
+  }
+
+  updateNote(id: string, data:any): Promise<any> {
+    return this.firestore.collection('NOTAS').doc(id).update(data);
   }
 }
 
