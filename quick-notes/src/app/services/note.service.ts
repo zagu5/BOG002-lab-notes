@@ -9,7 +9,8 @@ import { NOTAS } from '../mock-notes';
 export class NoteService {
 
   constructor(
-    private firestore: AngularFirestore) { }
+    private firestore: AngularFirestore
+    ) { }
 
   addNote(note:any): Promise<any>{
     return this.firestore.collection('NOTAS').add(note);

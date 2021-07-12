@@ -9,6 +9,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
    title = 'quick-notes';
+
+
+
+
+
+
+
+
+
+
+
+
+
   //  notas: Observable<any[]>;
   // constructor(firestore: AngularFirestore){
   //   this.notas = firestore.collection('notas').valueChanges();

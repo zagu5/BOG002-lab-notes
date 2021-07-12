@@ -9,7 +9,10 @@
     (click)="onSelect(note)"> -->
     <li *ngFor="let note of notes" >
       <span class="badge">{{note.title}}</span> {{note.description}}
-      <i class="far fa-edit" [routerLink]="['/editNote/id', note.id]"></i>
+      <a [routerLink]="['/edit-note', note.id]">
+        <i class="far fa-edit"></i>
+      </a>
+
       <i (click)="deleteNotes(note.id)" class="fas fa-trash-alt"></i>
     </li>
   </ul>

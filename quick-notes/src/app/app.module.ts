@@ -5,13 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
-import { environment} from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { AngularFirestore} from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
+
+import { environment} from '../environments/environment';
+
+// import { AngularFirestore} from '@angular/fire/firestore';
 // import { FlashMessagesModule} from 'angular2-flash-messages';
+
 // *** Components ***
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +25,7 @@ import { NotesComponent } from './components/notes/notes.component';
 import { CoverComponent } from './components/cover/cover.component';
 import { NoteDetailComponent } from './components/note-detail/note-detail.component';
 import { CreateNotesComponent } from './components/create-notes/create-notes.component';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
@@ -35,6 +39,7 @@ import { CreateNotesComponent } from './components/create-notes/create-notes.com
     CoverComponent,
     NoteDetailComponent,
     CreateNotesComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
