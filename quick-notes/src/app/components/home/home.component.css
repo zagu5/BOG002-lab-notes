@@ -67,7 +67,7 @@ p {
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
-  font-size: 46px;
+  font-size: 38px;
   line-height: 55px;
 
   color: #FFFFFF;
@@ -173,6 +173,6 @@ box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
   height: 115px;
   left: 25px;
   top: 106px;
-  border-radius: 100px/50px;
+  border-radius: 20px ;
   background: #00A19B;
 }

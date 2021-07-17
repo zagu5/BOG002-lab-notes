@@ -1,0 +1,38 @@
+<body>
+  <div class="page">
+      <!--Main Content-->
+      <section class="container">
+          <nav class="navbar">
+              <div class="navbar_content">
+                  <h1>Fast Notes</h1>
+                  <!-- {{ user$ | async | json }} -->
+                  <ul *ngIf="user$ | async as user; else login" >
+                      <li>
+                        <a routerLink="/">Inicio</a>
+                      </li>
+
+                      <li *ngIf="user">
+                        <a href="#" (click)="onLogout()">Logout</a>
+                      </li>
+
+                      <li>
+                        <a >{{user?.email }}</a>
+                      </li>
+                  </ul>
+                  <ng-template #login>
+                    <ul>
+                      <li>
+                        <a routerLink="/login">Login</a>
+                      </li>
+                      <li>
+                        <a routerLink="/register">Registro</a>
+                      </li>
+
+                    </ul>
+
+                  </ng-template>
+              </div>
+          </nav>
+      </section>
+  </div>
+</body>

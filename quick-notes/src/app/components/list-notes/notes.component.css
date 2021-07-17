@@ -4,12 +4,26 @@ body {
   background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.btn-add {
+  background: #00a19b;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.25em;
+  margin: 7px;
+  padding: 10px 0;
+  text-align: center;
+  width: 250px;
+  text-decoration: none;
+  box-shadow: 0px 3px 0 grey;
+  cursor: pointer;
+  border-radius: 50px;
+}
 .notas {
   font-family: Lato;
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 30em;
 }
 .notas li {
   cursor: pointer;
@@ -56,3 +70,10 @@ body {
 input {
   padding: .5rem;
 }
+
+.btn-delete{
+  position: relative;
+  box-shadow: 0px 2px 2px grey;
+}
+
+

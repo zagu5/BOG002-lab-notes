@@ -4,8 +4,9 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CoverComponent } from './components/cover/cover.component';
 import { LoginComponent } from './components/login/login.component';
-import { NotesComponent} from './components/notes/notes.component';
+import { NotesComponent} from './components/list-notes/notes.component';
 import { CreateNotesComponent} from './components/create-notes/create-notes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
  { path:  '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
  { path: 'home', component: HomeComponent},
  { path: 'register', component: RegisterComponent},
  { path: 'login', component: LoginComponent},
+ { path: 'dashboard', component: DashboardComponent},
  { path: 'notes', component: NotesComponent},
  { path: 'create-notes', component: CreateNotesComponent},
  { path: 'edit-note/:id', component: CreateNotesComponent},

@@ -69,7 +69,7 @@ p {
     background-color: #00a19b;
 }
 
-.input-name {
+#name {
   position: absolute;
   width: 303px;
   height: 60px;
@@ -83,7 +83,7 @@ p {
   line-height: 22px;
   box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
 }
-.input-email {
+#email {
   position: absolute;
   width: 303px;
   height: 60px;
@@ -97,7 +97,7 @@ p {
   color: #FFFFFF;
   box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
 }
-.input-password {
+#password {
   position: absolute;
   width: 303px;
   height: 60px;
@@ -140,6 +140,9 @@ h3 {
   border-radius: 100%;
 	box-shadow: -5px 4px 8px rgba(24,56,182,0.4);
 }
+.btn-register:hover {
+  background-color: #cfd8dc;
+}
 .text-login{
   position: absolute;
   width: 96px;
@@ -161,4 +164,10 @@ h3 {
   top: 106px;
   border-radius: 100px/50px;
   background: #00A19B;
+}
+.text{
+  color: red;
+  font-family: lato;
+  font-size: 12px;
+
 }

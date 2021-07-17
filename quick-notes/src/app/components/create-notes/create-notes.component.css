@@ -1,0 +1,28 @@
+.btn-back{
+  margin-top: 20px;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.btn-back:hover {
+  background-color: #cfd8dc;
+}
+.btn-add{
+  margin-top: 20px;
+  background-color: #eee;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.btn-add:hover {
+  background-color: #cfd8dc;
+}
+#title-note{
+  font-size: 1em;
+  padding: .8rem;
+}
+#description-note{
+  font-size: 1em;
+  padding: .8rem;
+}

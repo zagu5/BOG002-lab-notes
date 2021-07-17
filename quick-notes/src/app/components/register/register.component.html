@@ -8,14 +8,14 @@
       </svg>
       <section class="container-register">
         <div id="ovalo"></div>
-        <form class="form-register">
+        <form class="form-register" [formGroup]="registerForm" (ngSubmit)="onRegister()">
             <h2>Crea una cuenta</h2>
-            <input class="input-name" type="text" placeholder="     Ingresa un nombre de usuario" id="nickname">
-            <input class="input-email" type="text" placeholder="     Ingresa un correo válido" id="email">
-            <input class="input-password" type="password" placeholder="     Crea una Contraseña" id="password">
+            <!-- <input class="form-control" type="text" formControlName="name" placeholder="     Ingresa tu nombre" id="name"> -->
+            <input class="form-control" type="email" formControlName="email" placeholder="     Ingresa un correo válido" id="email">
+            <input class="form-control" type="password" formControlName="password" placeholder="     Crea una Contraseña" id="password">
             <h3>Registro</h3>
             <button class="btn-register" type="submit"><i class="fas fa-angle-double-right"></i></button>
-            <p class="text-login"><a routerLink="/login">Inicie sesión</a></p>
+            <p class="text-login">Tienes una cuenta?<a [routerLink]="['/login']">Logueate</a></p>
         </form>
 
         <svg width="221px" height="233px" class="ellipse-2">
