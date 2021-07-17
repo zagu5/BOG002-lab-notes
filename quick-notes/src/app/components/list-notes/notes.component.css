@@ -3,6 +3,42 @@ body {
   background: #000000;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+.main-content {
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+
+  animation: 2s main-content 0.5s ease-in-out;
+}
+.main-content p:first-child {
+  font-size: 36px;
+  font-weight: 300;
+  margin: -0 0 -14px 44px;
+  color: aliceblue
+}
+.main-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: -0 0 28px 0;
+  color: aliceblue;
+}
+@keyframes main-content {
+  0% {
+      transform: translateY(-600px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+h2{
+  color: antiquewhite;
 }
 .btn-add {
   background: #00a19b;

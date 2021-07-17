@@ -8,7 +8,7 @@
                   <!-- {{ user$ | async | json }} -->
                   <ul *ngIf="user$ | async as user; else login" >
                       <li>
-                        <a routerLink="/">Inicio</a>
+                        <a routerLink="/notes">Notas</a>
                       </li>
 
                       <li *ngIf="user">

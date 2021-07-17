@@ -6,11 +6,13 @@
   --white: #fefefe;
 }
 body {
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
   font-family: 'Lato', sans-serif;
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  background-color: var(--black);
 }
 .page {
   position: relative;
@@ -52,16 +54,20 @@ body {
       transform: translateY(0px);
   }
 }
-
+.navbar_content h1{
+  color: aliceblue;
+}
 .navbar_content ul {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
   padding: 0%;
   width: 450px;
+  color: aliceblue;
 }
 .navbar_content ul li a {
   color: var(--black);
   font-weight: 400;
   text-decoration: none;
+  color: aliceblue;
 }
