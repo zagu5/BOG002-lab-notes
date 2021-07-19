@@ -4,6 +4,11 @@ import { Component, OnInit } from '@angular/core';
 // import { AngularFirestore } from '@angular/fire/firestore';
 // import { Observable } from 'rxjs';
 import { NoteService } from 'src/app/services/note.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
+
+
 // import { NoteService } from 'src/app/services/note.service';
 
 @Component({
@@ -12,6 +17,7 @@ import { NoteService } from 'src/app/services/note.service';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit {
+  public user$: Observable<any> = this.authService.afAuth.user;
     // notas = NOTAS;
     // notas: Observable<any[]>;
     // selectedNote?: Note;  // No hay ninguna nota cuando se inicia la app
@@ -22,6 +28,8 @@ export class NotesComponent implements OnInit {
   notes: any [] = [];
 
   constructor(
+    private authService: AuthService,
+    private router: Router,
     private noteService: NoteService,
     //firestore: AngularFirestore
     ) {
@@ -31,21 +39,33 @@ export class NotesComponent implements OnInit {
       this.getNotes()
   }
 
+  async onLogout(){
+    await this.authService.logout();
+    this.router.navigate(['/cover'])
+  }
+
   getNotes(){
     this.noteService.getNote().subscribe(data =>{
-      this.notes = [];
-      data.forEach((element: any) => {
-        // console.log(element.payload.doc.id);
-        // console.log(element.payload.doc.data);
-        this.notes.push({
+      // this.notes = [];
+      // data.forEach((element: any) => {
+      //   // console.log(element.payload.doc.id);
+      //   // console.log(element.payload.doc.data);
+      //   this.notes.push({
+      //     id: element.payload.doc.id,
+      //     ...element.payload.doc.data()
+      //   })
+      // });
+
+      this.notes = data.map((element: any) => ({
           id: element.payload.doc.id,
           ...element.payload.doc.data()
         })
-      });
+      );
         console.log(this.notes);
       // console.log(data);
     });
   }
+
   deleteNotes(id: string) {
     this.noteService.deleteNote(id).then(() =>{
       console.log('Tu nota ha sido eliminada');
@@ -53,8 +73,4 @@ export class NotesComponent implements OnInit {
       console.log(error);
     });
   }
-  // onSelect metodo que asigna la nota en el momento que se hizo click al comp selectedNote
-  // onSelect(note: Note): void {
-  //   this.selectedNote = note;
-  // }
 }

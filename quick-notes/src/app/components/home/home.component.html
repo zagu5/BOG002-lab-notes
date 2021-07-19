@@ -8,11 +8,17 @@
       </svg>
       <section class="container-home">
         <div id="ovalo"></div>
-        <form class="form">
+        <form class="form-group">
             <h2>Estas a un click</h2>
-            <button class="btn-email"><span><i class="fas fa-envelope"></i></span> Continue con email</button>
-            <button class="btn-google" (click)="loginGoogle()"><span><i class="fab fa-google"></i></span>  Continue con Google</button>
-            <button class="btn-facebook"><span><i class="fab fa-facebook"></i></span>  Continue con Facebook</button>
+            <div>
+              <button class="btn-email" routerLink="/login"><span><i class="fas fa-envelope"></i></span> Continue con email</button>
+            </div>
+            <div>
+              <button class="btn-google" (click)="onLoginGoogle()"><span><i class="fab fa-google"></i></span>  Continue con Google </button>
+            </div>
+            <div>
+              <button class="btn-facebook"><span><i class="fab fa-facebook"></i></span>  Continue con Facebook</button>
+            </div>
             <button class="btn-join" type="submit"><i class="fas fa-angle-double-right"></i></button>
             <p class="text-register"><a routerLink="/register">Regístro</a></p>
             <p class="text-login"><a routerLink="/login">Inicie sesión</a></p>

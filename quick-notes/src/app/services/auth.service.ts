@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Provider } from '@angular/core';
 import { User } from '../models/note/user.model';
 import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
@@ -11,17 +9,18 @@ import { first } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  // public user: User;
-  // isloggedIn = false;
-  // public user: User = new User();
-  // public userdata$: Observable<firebase.User | null>;
- // public currentUser: Observable<User | null>;
+
   constructor(
      public afAuth: AngularFireAuth,
-    //  public afs: AngularFirestore,
-    //  public router: Router,
+    public router: Router,
+
 
   ) {}
+
+  async loginGoogle(){
+    const result =  await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    return result
+  }
 
   async login(email:string, password:string){
     const result = await this.afAuth.signInWithEmailAndPassword(email,password)
@@ -32,7 +31,7 @@ export class AuthService {
     const result = await this.afAuth.createUserWithEmailAndPassword(email, password)
   }
 
-async logout(){
+  async logout(){
   await this.afAuth.signOut()
   }
 

@@ -1,28 +1,64 @@
 <body>
-<section class="main-content">
-  <p>Escribe tus </p>
-  <h1>Fast Notes</h1>
+  <div class="page">
+    <section class="container">
+        <nav class="navbar">
+            <div class="navbar_content">
+                <h1>Fast Notes</h1>
+                <ul *ngIf="user$ | async as user; else login" >
+                    <li>
+                      <a routerLink="/cover">Inicio</a>
+                    </li>
 
-  <main >
-    <div class="container">
-      <h2>LISTADO DE NOTAS</h2>
-      <div>
-        <button class="btn-add" routerLink="/create-notes">Añadir nota</button>
-      </div>
-      <h2 *ngIf="notes.length == 0">¡ups! No hay notas para mostrar</h2>
-      <ul class="notas" *ngIf="notes.length > 0">
-        <li *ngFor="let note of notes" >
-          <span class="badge">{{note.title}}</span> {{note.description}}
-          <a [routerLink]="['/edit-note', note.id]">
-            <i class="far fa-edit"></i>
-          </a>
-          <button class="btn-delete" type="button" (click)="deleteNotes(note.id)"> <i class="fas fa-trash-alt"></i></button>
-        </li>
-      </ul>
-    </div>
-  </main>
+                    <li *ngIf="user">
+                      <a href="#" (click)="onLogout()">Logout</a>
+                    </li>
 
-</section>
+                    <li>
+                      <a >{{user?.email }}</a>
+                    </li>
+                </ul>
+                <ng-template #login>
+                  <ul>
+                    <li>
+                      <a routerLink="/login">Login</a>
+                    </li>
+                    <li>
+                      <a routerLink="/register">Registro</a>
+                    </li>
+
+                  </ul>
+
+                </ng-template>
+            </div>
+        </nav>
+
+        <section class="main-content">
+          <h1>Listado de Notas</h1>
+          <main >
+            <div>
+              <div>
+                <button class="btn-add" routerLink="/create-notes">Añadir nota</button>
+              </div>
+              <h2 *ngIf="notes.length == 0">¡ups! No hay notas para mostrar</h2>
+              <ul class="notas" *ngIf="notes.length > 0">
+                <li *ngFor="let note of notes" >
+                  <span class="badge">{{note.title}}</span> {{note.description}}
+                  <a [routerLink]="['/edit-note', note.id]">
+                    <i class="far fa-edit"></i>
+                  </a>
+                  <button class="btn-delete" type="button" (click)="deleteNotes(note.id)"> <i class="fas fa-trash-alt"></i></button>
+                </li>
+              </ul>
+            </div>
+          </main>
+        </section>
+
+        <section class="side-content">
+          <div></div>
+            <img src="https://i.ibb.co/Pmf0f0Z/lego-cars.png" alt="lego">
+        </section>
+    </section>
+  </div>
 </body>
 
 
