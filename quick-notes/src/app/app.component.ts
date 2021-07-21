@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-// import { AngularFirestore } from '@angular/fire/firestore';
-// import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -9,24 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
    title = 'quick-notes';
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //  notas: Observable<any[]>;
-  // constructor(firestore: AngularFirestore){
-  //   this.notas = firestore.collection('notas').valueChanges();
-  // }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // OJO
 // @Component({ --> Decorador osea característicasl del componente al final

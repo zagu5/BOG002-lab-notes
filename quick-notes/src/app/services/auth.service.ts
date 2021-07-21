@@ -1,4 +1,4 @@
-import { Injectable, Provider } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from '../models/note/user.model';
 import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
